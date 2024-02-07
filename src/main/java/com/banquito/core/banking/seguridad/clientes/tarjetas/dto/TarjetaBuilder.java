@@ -1,11 +1,12 @@
 package com.banquito.core.banking.seguridad.clientes.tarjetas.dto;
 
+
 import com.banquito.core.banking.seguridad.clientes.tarjetas.domain.Tarjeta;
 
 public class TarjetaBuilder {
+
     public static Tarjeta toTarjeta(TarjetaDTO dto) {
         Tarjeta tarjeta = new Tarjeta();
-        tarjeta.setIdTarjeta(dto.getIdTarjeta());
         tarjeta.setCodTarjeta(dto.getCodTarjeta());
         tarjeta.setNumTarjeta(dto.getNumTarjeta());
         tarjeta.setClaveTarjeta(dto.getClaveTarjeta());
@@ -14,21 +15,17 @@ public class TarjetaBuilder {
     }
 
     public static TarjetaDTO toDTO(Tarjeta tarjeta){
+
         TarjetaDTO dto = TarjetaDTO.builder()
-        .idTarjeta(tarjeta.getIdTarjeta())
-        .codTarjeta(tarjeta.getCodTarjeta())
-        .numTarjeta(tarjeta.getNumTarjeta())
-        .claveTarjeta(tarjeta.getClaveTarjeta()).build();
+            .codTarjeta(tarjeta.getCodTarjeta())
+            .numTarjeta(tarjeta.getNumTarjeta())
+            .claveTarjeta(tarjeta.getClaveTarjeta())
+            .build();
 
         return dto;
     }
 
     public static Tarjeta copyTarjeta(Tarjeta source, Tarjeta destiny) {
-
-        if (source.getIdTarjeta() != null) {
-            destiny.setIdTarjeta(source.getIdTarjeta());
-        }
-
         if (source.getCodTarjeta() != null) {
             destiny.setCodTarjeta(source.getCodTarjeta());
         }
@@ -41,9 +38,7 @@ public class TarjetaBuilder {
             destiny.setClaveTarjeta(source.getClaveTarjeta());
         }
 
+
         return destiny;
     }
-
-
-
 }

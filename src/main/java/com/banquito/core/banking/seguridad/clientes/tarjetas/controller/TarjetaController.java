@@ -27,7 +27,7 @@ public class TarjetaController {
         log.info("Se va a crear el registro de loguear una tarjeta: {}", tarjeta);
         try {
             this.tarjetaService.crear(tarjeta);
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok().build();
         } catch (RuntimeException rte) {
             log.error("Error al crear el registro de loguear una tarjeta", rte);
             return ResponseEntity.badRequest().build();

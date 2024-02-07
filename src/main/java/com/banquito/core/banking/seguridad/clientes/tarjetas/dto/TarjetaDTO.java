@@ -1,5 +1,6 @@
 package com.banquito.core.banking.seguridad.clientes.tarjetas.dto;
 
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,7 +8,7 @@ import lombok.Data;
 @Data
 public class TarjetaDTO {
     private String idTarjeta;
-    private Integer codTarjeta;
+    private String codTarjeta;
     private String numTarjeta;
     private String claveTarjeta;
 
@@ -27,6 +28,8 @@ public class TarjetaDTO {
             return false;
         return true;
     }
+
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -40,5 +43,5 @@ public class TarjetaDTO {
         return "TarjetaDTO [idTarjeta=" + idTarjeta + ", codTarjeta=" + codTarjeta + ", numTarjeta=" + numTarjeta
                 + ", claveTarjeta=" + claveTarjeta + "]";
     }
-    
+
 }

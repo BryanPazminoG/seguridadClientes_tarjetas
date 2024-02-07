@@ -14,16 +14,15 @@ import lombok.Setter;
 
 @Getter @Setter
 @NoArgsConstructor
-@Document(collection = "Tarjetas")
+@Document(collection = "segtarjetas")
 public class Tarjeta {
 
     @Id
     private String id;
-    @Indexed(unique = true)
-    private String idTarjeta;
 
+    @Indexed(unique = true)
     @Field("codigo_tarjeta")
-    private Integer codTarjeta;
+    private String codTarjeta;
 
     @Field("numero_tarjeta")
     private String numTarjeta;
@@ -40,7 +39,6 @@ public class Tarjeta {
     @Version
     private Long version;
 
-    //private List<Acceso> accesos;
     
     public Tarjeta(String id) {
         this.id = id;
@@ -73,9 +71,9 @@ public class Tarjeta {
 
     @Override
     public String toString() {
-        return "Tarjeta [id=" + id + ", idTarjeta=" + idTarjeta + ", codTarjeta=" + codTarjeta + ", numTarjeta="
-                + numTarjeta + ", claveTarjeta=" + claveTarjeta + ", fechaCreacion=" + fechaCreacion
-                + ", fechaUltimaModificacion=" + fechaUltimaModificacion + ", version=" + version + "]";
+        return "Tarjeta [id=" + id + ", codTarjeta=" + codTarjeta + ", numTarjeta=" + numTarjeta + ", claveTarjeta="
+                + claveTarjeta + ", fechaCreacion=" + fechaCreacion + ", fechaUltimaModificacion="
+                + fechaUltimaModificacion + ", version=" + version + "]";
     }
 
 
