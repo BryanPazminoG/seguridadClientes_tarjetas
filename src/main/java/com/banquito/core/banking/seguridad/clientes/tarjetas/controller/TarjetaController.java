@@ -22,7 +22,7 @@ public class TarjetaController {
         this.tarjetaService = tarjetaService;
     }
 
-    @PostMapping("/nuevo")
+    @PostMapping
     public ResponseEntity<Void> crear(@RequestBody TarjetaDTO tarjeta) {
         log.info("Se va a crear el registro de loguear una tarjeta: {}", tarjeta);
         try {
@@ -34,7 +34,7 @@ public class TarjetaController {
         }
     }
 
-    @PutMapping("/nueva-clave")
+    @PutMapping
     public ResponseEntity<Void> actualizarClave(@RequestBody TarjetaDTO tarjeta) {
         try {
             log.info("Se va a actualizar la clave de la tarjeta numero: {}", tarjeta.getNumTarjeta());

@@ -57,7 +57,7 @@ public class TarjetaService {
     @Transactional
     public Boolean actualizarClave(TarjetaDTO dto) {
         try {
-            log.info("realiza busqueda del numero de la tarjeta: {}", dto.getNumTarjeta());
+            log.info("Iniciando busqueda del numero de la tarjeta: {}", dto.getNumTarjeta());
             Tarjeta tarjetaAux = this.tarjetaRepository.findByNumTarjeta(dto.getNumTarjeta());
             if (tarjetaAux != null) {
                 log.info("Numero de tarjeta encontrada");
