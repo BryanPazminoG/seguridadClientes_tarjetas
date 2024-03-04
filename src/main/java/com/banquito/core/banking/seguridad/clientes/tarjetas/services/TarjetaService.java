@@ -25,9 +25,9 @@ public class TarjetaService {
         try {
             Tarjeta tarjeta = TarjetaBuilder.toTarjeta(dto);
             tarjeta.setClaveTarjeta(new DigestUtils("MD2").digestAsHex(tarjeta.getClaveTarjeta()));
-            tarjeta.setCodTarjeta(new DigestUtils("MD2").digestAsHex(tarjeta.toString()));
+            tarjeta.setId(new DigestUtils("MD2").digestAsHex(tarjeta.toString()));
             tarjeta.setFechaCreacion(LocalDateTime.now());
-            tarjeta.setFechaUltimaModificacion(LocalDateTime.now());
+            tarjeta.setFechaUltimoAcceso(LocalDateTime.now());
             tarjetaRepository.save(tarjeta);
             log.info("Se creó el registro de logueo de la tarjeta: {}", tarjeta.getNumTarjeta());
         } catch (Exception e) {

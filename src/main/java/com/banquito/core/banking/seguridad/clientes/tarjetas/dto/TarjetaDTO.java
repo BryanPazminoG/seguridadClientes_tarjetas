@@ -1,16 +1,38 @@
 package com.banquito.core.banking.seguridad.clientes.tarjetas.dto;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Builder
+@Getter
+@Setter
 @Data
 public class TarjetaDTO {
     private String idTarjeta;
-    private String codTarjeta;
     private String numTarjeta;
     private String claveTarjeta;
+
+    private List<LugarUltimoAccesoDTO> direccionesAcceso;
+
+    public void addDireccion(LugarUltimoAccesoDTO direccionesAcceso) {
+        if (this.direccionesAcceso == null) {
+            this.direccionesAcceso = new ArrayList<>();
+        }
+        this.direccionesAcceso.add(direccionesAcceso);
+    }
+
+    public void removeDireccion(LugarUltimoAccesoDTO direccionesAcceso) {
+        if (this.direccionesAcceso != null) {
+            this.direccionesAcceso.remove(direccionesAcceso);
+        }
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -40,7 +62,7 @@ public class TarjetaDTO {
 
     @Override
     public String toString() {
-        return "TarjetaDTO [idTarjeta=" + idTarjeta + ", codTarjeta=" + codTarjeta + ", numTarjeta=" + numTarjeta
+        return "TarjetaDTO [idTarjeta=" + idTarjeta + ", codTarjeta="  + ", numTarjeta=" + numTarjeta
                 + ", claveTarjeta=" + claveTarjeta + "]";
     }
 
