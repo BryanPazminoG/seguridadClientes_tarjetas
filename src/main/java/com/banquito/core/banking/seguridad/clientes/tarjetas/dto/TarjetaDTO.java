@@ -62,8 +62,10 @@ public class TarjetaDTO {
 
     @Override
     public String toString() {
-        return "TarjetaDTO [idTarjeta=" + idTarjeta + ", codTarjeta="  + ", numTarjeta=" + numTarjeta
-                + ", claveTarjeta=" + claveTarjeta + "]";
+        return "TarjetaDTO [idTarjeta=" + idTarjeta + ", numTarjeta=" + numTarjeta + ", claveTarjeta=" + claveTarjeta
+                + ", direccionesAcceso=" + direccionesAcceso + "]";
     }
+
+    
 
 }
