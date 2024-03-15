@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/seguridad-tarjeta")
+@RequestMapping("/api/v1/seguridadTarjeta")
 public class TarjetaController {
     private final TarjetaService tarjetaService;
 
@@ -22,7 +22,7 @@ public class TarjetaController {
         this.tarjetaService = tarjetaService;
     }
 
-    @PostMapping("/nuevo")
+    @PostMapping("/nuevos")
     public ResponseEntity<Void> crear(@RequestBody TarjetaDTO tarjeta) {
         log.info("Se va a crear el registro de loguear una tarjeta: {}", tarjeta);
         try {
@@ -34,7 +34,7 @@ public class TarjetaController {
         }
     }
 
-    @PutMapping("/nueva-clave")
+    @PutMapping("/nuevasClaves")
     public ResponseEntity<Void> actualizarClave(@RequestBody TarjetaDTO tarjeta) {
         try {
             log.info("Se va a actualizar la clave de la tarjeta numero: {}", tarjeta.getNumTarjeta());
@@ -46,7 +46,7 @@ public class TarjetaController {
     }
 
 
-    @PostMapping("/sesion")
+    @PostMapping("/sesiones")
     public ResponseEntity<Boolean> iniciar (@RequestBody TarjetaDTO tarjetaDTO) {
         log.info("Se va a iniciar sesion: {}", tarjetaDTO);
         try {
