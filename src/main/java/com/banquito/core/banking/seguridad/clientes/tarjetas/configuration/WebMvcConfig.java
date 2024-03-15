@@ -1,4 +1,4 @@
-package com.banquito.core.baking.cuenta.configuration;
+package com.banquito.core.banking.seguridad.clientes.tarjetas.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
