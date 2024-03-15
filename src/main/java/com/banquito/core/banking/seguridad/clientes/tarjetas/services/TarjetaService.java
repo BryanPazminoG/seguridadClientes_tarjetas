@@ -2,18 +2,19 @@ package com.banquito.core.banking.seguridad.clientes.tarjetas.services;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.commons.codec.digest.DigestUtils;
+
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dao.TarjetaRepository;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.domain.Tarjeta;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dto.TarjetaBuilder;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dto.TarjetaDTO;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
-@Slf4j
+@Log4j2
 @Service
 public class TarjetaService {
 

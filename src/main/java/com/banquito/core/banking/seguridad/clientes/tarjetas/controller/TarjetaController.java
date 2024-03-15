@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dto.TarjetaDTO;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.services.TarjetaService;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
-@Slf4j
+@Log4j2
 @CrossOrigin(origins = {"http://localhost:4200", "http://34.173.161.134:4201", "http://34.176.205.203:4202", 
                         "http://34.176.102.118:4203", "http://34.176.137.180:4204"})
 //@CrossOrigin(origins = "", allowedHeaders = "", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
