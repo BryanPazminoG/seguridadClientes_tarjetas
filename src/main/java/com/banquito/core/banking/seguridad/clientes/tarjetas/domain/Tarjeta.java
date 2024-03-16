@@ -36,8 +36,18 @@ public class Tarjeta {
     @Field("fecha_ultima_modificacion")
     private LocalDateTime fechaUltimaModificacion;
 
+    @Field("fecha_ultimo_acceso") 
+    private LocalDateTime fechaUltimoAcceso;
+
+    @Field("lugar_ultimo_acceso") 
+    private LugarUltimoAcceso lugarUltimoAcceso;
+
+    @Field("numero_intentos") 
+    private int numeroIntentos;
+
     @Version
     private Long version;
+
 
     
     public Tarjeta(String id) {
@@ -73,8 +83,11 @@ public class Tarjeta {
     public String toString() {
         return "Tarjeta [id=" + id + ", codTarjeta=" + codTarjeta + ", numTarjeta=" + numTarjeta + ", claveTarjeta="
                 + claveTarjeta + ", fechaCreacion=" + fechaCreacion + ", fechaUltimaModificacion="
-                + fechaUltimaModificacion + ", version=" + version + "]";
+                + fechaUltimaModificacion + ", fechaUltimoAcceso=" + fechaUltimoAcceso + ", lugarUltimoAcceso="
+                + lugarUltimoAcceso + ", numeroIntentos=" + numeroIntentos + ", version=" + version + "]";
     }
+
+    
 
 
 }

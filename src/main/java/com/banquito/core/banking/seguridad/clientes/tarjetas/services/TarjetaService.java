@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.commons.codec.digest.DigestUtils;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dao.TarjetaRepository;
+import com.banquito.core.banking.seguridad.clientes.tarjetas.domain.LugarUltimoAcceso;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.domain.Tarjeta;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dto.TarjetaBuilder;
 import com.banquito.core.banking.seguridad.clientes.tarjetas.dto.TarjetaDTO;
@@ -23,11 +24,24 @@ public class TarjetaService {
 
     public void crear(TarjetaDTO dto) {
         try {
+            
             Tarjeta tarjeta = TarjetaBuilder.toTarjeta(dto);
             tarjeta.setClaveTarjeta(new DigestUtils("MD2").digestAsHex(tarjeta.getClaveTarjeta()));
             tarjeta.setCodTarjeta(new DigestUtils("MD2").digestAsHex(tarjeta.toString()));
             tarjeta.setFechaCreacion(LocalDateTime.now());
             tarjeta.setFechaUltimaModificacion(LocalDateTime.now());
+
+            LugarUltimoAcceso lugarAcceso = new LugarUltimoAcceso();
+            lugarAcceso.setCiudad("Quito");
+            lugarAcceso.setPais("Ecuador");
+            lugarAcceso.setNombre("Banquito Quito");
+            lugarAcceso.setLinea1("Avenida Amazonas");
+            lugarAcceso.setLinea2("Naciones Unidas");
+            lugarAcceso.setCodigoPostal("12345");
+            lugarAcceso.setIpTerminal("192.168.1.100");
+            tarjeta.setLugarUltimoAcceso(lugarAcceso);
+            tarjeta.setNumeroIntentos(0);
+
             tarjetaRepository.save(tarjeta);
             log.info("Se creó el registro de logueo de la tarjeta: {}", tarjeta.getNumTarjeta());
         } catch (Exception e) {

@@ -2,6 +2,8 @@ package com.banquito.core.banking.seguridad.clientes.tarjetas.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,6 +51,7 @@ public class TarjetaController {
         }
     }
 
+ 
 
     @PostMapping("/sesion")
     public ResponseEntity<Boolean> iniciar (@RequestBody TarjetaDTO tarjetaDTO) {

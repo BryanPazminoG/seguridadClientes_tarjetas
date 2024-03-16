@@ -11,12 +11,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class LugarUltimoAcceso {
-    private String tipo;    
+    private String ciudad;
+    private String pais;
+    private String nombre;
     private String linea1;
     private String linea2;
     @Field("codigo_postal")
     private String codigoPostal;
-    private String estado;
+    private String ipTerminal;
 }
 
 
