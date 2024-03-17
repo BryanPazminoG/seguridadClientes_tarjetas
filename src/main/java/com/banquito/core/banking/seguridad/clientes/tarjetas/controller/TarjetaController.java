@@ -16,8 +16,11 @@ import com.banquito.core.banking.seguridad.clientes.tarjetas.services.TarjetaSer
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-@CrossOrigin(origins = {"http://localhost:4200", "http://34.173.161.134:4201", "http://34.176.205.203:4202", 
-                        "http://34.176.102.118:4203", "http://34.176.137.180:4204"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://34.86.49.111:4200",
+"http://34.145.220.97:4204",
+"http://34.145.219.32:4200",
+"http://34.162.115.216:4200"
+})
 //@CrossOrigin(origins = "", allowedHeaders = "", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
 @RestController
 @RequestMapping("/api/v1/seguridad-tarjeta")
